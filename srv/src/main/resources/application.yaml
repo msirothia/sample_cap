@@ -6,14 +6,14 @@ spring:
   sql:
     init:
       schema-locations: classpath:schema-h2.sql
-cds:
-  multi-tenancy:
-    sidecar:
-      url: http://localhost:4005/
-  data-source:
-    auto-config:
-      enabled: false
----
+#cds:
+ # multi-tenancy:
+  #  sidecar:
+   #   url: http://localhost:4005/
+  #data-source:
+   # auto-config:
+   #   enabled: false
+#---
 management:
   endpoint:
     health:
