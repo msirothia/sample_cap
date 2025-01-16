@@ -26,9 +26,6 @@ modules:
         properties:
           srv-url: ${default-url}
     requires:
-      - name: mtx-api
-        properties:
-          CDS_MULTITENANCY_SIDECAR_URL: ~{mtx-url}
       - name: DemoProject-registry
       - name: DemoProject-auth
       - name: DemoProject-db
@@ -36,24 +33,6 @@ modules:
         properties:
           CDS_MULTITENANCY_APPUI_URL: ~{url}
       - name: DemoProject-destination
-
-  - name: DemoProject-mtx
-    type: nodejs
-    path: mtx/sidecar
-    build-parameters:
-      builder: custom
-      build-result: gen
-      commands:
-        - npm run build
-      requires:
-        - name: DemoProject-srv
-    parameters:
-      memory: 256M
-      disk-quota: 512M
-    provides:
-      - name: mtx-api
-        properties:
-          mtx-url: ${default-url}
 
   - name: DemoProject-db-deployer
     type: hdb

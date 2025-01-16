@@ -8,6 +8,6 @@
     "@sap/cds-dk": "^8"
   },
   "workspaces": [
-    "mtx/sidecar"
+   
   ]
 }
